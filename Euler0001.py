@@ -25,3 +25,7 @@ for i in range(N):
         total +=i 
 print(total)
 
+# A more efficient way of doing this might be to generate lists of multiples, take the union, and throw out any which are out of range. Kind of hacky. 
+
+print(sum([t for t in list(set([3*i for i in range(N/3+1)]) | 
+           set([5*i for i in range(N/5+1)])) if t<N]))
